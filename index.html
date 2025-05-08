@@ -94,7 +94,10 @@
             let leftHandActive = false;
             let lastColorChangeTime = 0;
             const colorChangeDelay = 500; // milliseconds
-            
+            let currentSphereSize = 1.0; // Default/starting size
+            let targetSphereSize = 1.0;  // Target size based on hand gesture
+            const smoothingFactor = 0.15; // Adjust this value between 0-1 (lower = smoother but slower)
+
             // Keep canvas size in sync with window size
             function updateCanvasSize() {
                 canvasElement.width = window.innerWidth;
@@ -224,13 +227,11 @@
             function animate() {
                 requestAnimationFrame(animate);
                 
-                // Rotate the sphere slowly
+                // Rotate the sphere continuously, regardless of hand interaction
                 if (sphere) {
-                    // Only rotate if not being actively interacted with
-                    if (!rightHandActive && !leftHandActive) {
-                        sphere.rotation.x += 0.003;
-                        sphere.rotation.y += 0.008;
-                    }
+                    // Remove the condition that stops rotation during hand interaction
+                    sphere.rotation.x += 0.003;
+                    sphere.rotation.y += 0.008;
                     
                     // Add pulsing glow effect to the neon fill
                     const time = Date.now() * 0.001; // Convert to seconds
@@ -404,22 +405,24 @@
                             
                             // Map the pinch distance to a sphere size (adjusted for better UX)
                             // Smaller distance = smaller sphere, larger distance = larger sphere
-                            let sphereSize;
                             
                             // Calibrate distance range based on reasonable hand movement
                             // Normal pinch is around 0.05-0.1, open hand is 0.2-0.3
                             if (pinchDistance < 0.05) {
-                                sphereSize = 0.2; // Minimum size when pinched
+                                targetSphereSize = 0.2; // Minimum size when pinched
                             } else if (pinchDistance > 0.25) {
-                                sphereSize = 2.0; // Maximum size when fully open
+                                targetSphereSize = 2.0; // Maximum size when fully open
                             } else {
                                 // Linear mapping from pinch distance to sphere size
-                                sphereSize = 0.2 + (pinchDistance - 0.05) * (2.0 - 0.2) / (0.25 - 0.05);
+                                targetSphereSize = 0.2 + (pinchDistance - 0.05) * (2.0 - 0.2) / (0.25 - 0.05);
                             }
                             
-                            // Apply the size to the sphere (set scale)
+                            // Apply smooth interpolation toward the target size
+                            currentSphereSize = currentSphereSize + (targetSphereSize - currentSphereSize) * smoothingFactor;
+                            
+                            // Apply the smoothed size to the sphere
                             if (sphere) {
-                                sphere.scale.set(sphereSize, sphereSize, sphereSize);
+                                sphere.scale.set(currentSphereSize, currentSphereSize, currentSphereSize);
                             }
                             
                             rightHandActive = true;
