@@ -31,10 +31,10 @@ Try the live demo: [https://collidingscopes.github.io/threejs-handtracking-101/]
 
 ```bash
 # Clone this repository
-git clone https://github.com/yourusername/hand-tracking-demo.git
+git clone https://github.com/collidingScopes/threejs-handtracking-101
 
 # Navigate to the project directory
-cd hand-tracking-demo
+cd threejs-handtracking-101
 
 # Serve with your preferred method (example using Python)
 python -m http.server
