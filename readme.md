@@ -50,3 +50,29 @@ MIT License
 
 - Three.js - https://threejs.org/
 - MediaPipe - https://mediapipe.dev/
+
+## Related Projects
+
+Check out other free and open-source projects by the same developer:
+
+- [Particular Drift](https://collidingScopes.github.io/particular-drift) - Turn photos into flowing particle animations
+- [Liquid Logo](https://collidingScopes.github.io/liquid-logo) - Transform logos and icons into liquid metal animations
+- [Video-to-ASCII](https://collidingScopes.github.io/ascii) - Convert videos into ASCII pixel art
+- [Shape Shimmer](https://collidingScopes.github.io/shimmer) - Turn photos into funky wave animations
+- [Colliding Scopes](https://collidingScopes.github.io) - Turn photos into kaleidoscope animations
+- [Manual Brick Breaker](https://manual-brick-breaker.netlify.app) - Play brick breaker by waving your hands around
+
+## Contact
+
+- Instagram: [@stereo.drift](https://www.instagram.com/stereo.drift/)
+- Twitter/X: [@measure_plan](https://x.com/measure_plan)
+- Email: [stereodriftvisuals@gmail.com](mailto:stereodriftvisuals@gmail.com)
+- GitHub: [collidingScopes](https://github.com/collidingScopes)
+
+## Donations
+
+If you found this tool useful, feel free to buy me a coffee. 
+
+My name is Alan, and I enjoy building open source software for art, animation, games, and more. This would be much appreciated during late-night coding sessions!
+
+[![Buy Me A Coffee](https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png)](https://www.buymeacoffee.com/stereoDrift)
