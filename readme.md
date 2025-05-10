@@ -2,6 +2,8 @@
 
 A threejs / WebGL / MediaPipe-powered interactive demo that allows you to control a 3D sphere using hand gestures.
 
+<img src="demo.png">
+
 ## Demo
 
 Try the live demo: [https://collidingscopes.github.io/threejs-handtracking-101/](https://collidingscopes.github.io/threejs-handtracking-101/)
