@@ -207,6 +207,46 @@
                 renderer.setClearColor(0x000000, 0); // Transparent background
                 threeContainer.appendChild(renderer.domElement);
 
+                function loadModel() {
+
+				const loader = new GLTFLoader();
+				loader.load( 'models/gltf/Soldier.glb', function ( gltf ) {
+
+
+					model = gltf.scene;
+					group.add( model );
+					model.rotation.y = PI;
+					group.rotation.y = PI;
+
+					model.traverse( function ( object ) {
+
+						if ( object.isMesh ) {
+
+							if ( object.name == 'vanguard_Mesh' ) {
+
+								object.castShadow = true;
+								object.receiveShadow = true;
+								object.material.shadowSide = THREE.DoubleSide;
+								//object.material.envMapIntensity = 0.5;
+								object.material.metalness = 1.0;
+								object.material.roughness = 0.2;
+								object.material.color.set( 1, 1, 1 );
+								object.material.metalnessMap = object.material.map;
+
+							} else {
+
+								object.material.metalness = 1;
+								object.material.roughness = 0;
+								object.material.transparent = true;
+								object.material.opacity = 0.8;
+								object.material.color.set( 1, 1, 1 );
+
+							}
+
+						}
+
+					} );
+
                 var loader = new GLTFLoader();
             
                 loader.load( 'Nerfertiti.glb', function ( gltf )
