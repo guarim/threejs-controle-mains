@@ -2,11 +2,11 @@
 
 A threejs / WebGL / MediaPipe-powered interactive demo that allows you to control a 3D sphere using hand gestures.
 
-<img src="demo.png">
+<img src="me.png">
 
 ## Demo
 
-Try the live demo: [https://collidingscopes.github.io/threejs-handtracking-101/](https://collidingscopes.github.io/threejs-handtracking-101/)
+Try the live demo: [https://guarim.github.io/threejs-controle-mains/](https://guarim.github.io/threejs-controle-mains/)
 
 ## Features
 
@@ -71,10 +71,3 @@ Check out other free and open-source projects by the same developer:
 - Email: [stereodriftvisuals@gmail.com](mailto:stereodriftvisuals@gmail.com)
 - GitHub: [collidingScopes](https://github.com/collidingScopes)
 
-## Donations
-
-If you found this tool useful, feel free to buy me a coffee. 
-
-My name is Alan, and I enjoy building open source software for art, animation, games, and more. This would be much appreciated during late-night coding sessions!
-
-[![Buy Me A Coffee](https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png)](https://www.buymeacoffee.com/stereoDrift)
