@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hand Tracking Demo with Three.js</title>
+    <title>Controle virtuel avec médiapipe et Three.js</title>
     <script defer src="https://cloud.umami.is/script.js" data-website-id="eb59c81c-27cb-4e1d-9e8c-bfbe70c48cd9"></script>
     <style>
         body {
@@ -400,7 +400,7 @@
                     // Update status text
                     statusElement.textContent = 
                         results.multiHandLandmarks.length === 1 ? 'Une main detectee' :
-                        `${results.multiHandLandmarks.length} hands detected`;
+                        `${results.multiHandLandmarks.length} mains detectees`;
                     
                     // Process each hand
                     for (let handIndex = 0; handIndex < results.multiHandLandmarks.length; handIndex++) {
