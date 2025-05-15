@@ -210,7 +210,7 @@
                 function loadModel() {
 
 				const loader = new GLTFLoader();
-				loader.load( 'models/gltf/Soldier.glb', function ( gltf ) {
+				loader.load( 'Nefertiti.glb', function ( gltf ) {
 
 
 					model = gltf.scene;
@@ -247,16 +247,7 @@
 
 					} );
 
-                var loader = new GLTFLoader();
-            
-                loader.load( 'Nerfertiti.glb', function ( gltf )
-                {
-                sword = gltf.scene;  // sword 3D object is loaded
-                sword.scale.set(2, 2, 2);
-                sword.position.y = 4;
-                scene.add(sword);
-                } );
-                
+                               
                 // Create a sphere with vibrant neon color fill and white wireframe
                 const geometry = new THREE.SphereGeometry(2, 32, 32);
                 
