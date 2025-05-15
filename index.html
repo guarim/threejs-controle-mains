@@ -298,7 +298,7 @@
             
             // Initialize MediaPipe Hands
             async function initMediaPipeHands() {
-                statusElement.textContent = 'Initializing MediaPipe Hands...';
+                statusElement.textContent = 'Initialisation MediaPipe detection...';
                 
                 const hands = new Hands({
                     locateFile: (file) => {
@@ -314,7 +314,7 @@
                 });
                 
                 await hands.initialize();
-                statusElement.textContent = 'Hand tracking ready!';
+                statusElement.textContent = 'tracking des mains pret!';
                 
                 return hands;
             }
@@ -399,7 +399,7 @@
                 if (results.multiHandLandmarks && results.multiHandLandmarks.length > 0) {
                     // Update status text
                     statusElement.textContent = 
-                        results.multiHandLandmarks.length === 1 ? '1 hand detected' :
+                        results.multiHandLandmarks.length === 1 ? 'Une main detectee' :
                         `${results.multiHandLandmarks.length} hands detected`;
                     
                     // Process each hand
@@ -466,7 +466,7 @@
                         }
                     }
                 } else {
-                    statusElement.textContent = 'No hands detected';
+                    statusElement.textContent = 'Aucune main detectee';
                 }
             }
             
