@@ -30,7 +30,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transform: scaleX(-1); /* Mirror the webcam feed */
+            transform: scaleX(-1);/* Mettre en miroir le flux de la webcam */
         }
         
         #canvas {
@@ -39,7 +39,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            transform: scaleX(-1); /* Mirror the canvas to match webcam */
+            transform: scaleX(-1);/* Refléter la toile pour correspondre à la webcam */
             pointer-events: none;
         }
         
@@ -165,7 +165,7 @@
                     });
                 } catch (error) {
                     statusElement.textContent = `Error accessing webcam: ${error.message}`;
-                    console.error('Error accessing webcam:', error);
+                    console.error('Pas d'acces à la webcam:', error);
                     throw error;
                 }
             }
