@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demo de tracking via les mains avec Three.js</title>
+    <title>Hand Tracking Demo with Three.js</title>
     <script defer src="https://cloud.umami.is/script.js" data-website-id="eb59c81c-27cb-4e1d-9e8c-bfbe70c48cd9"></script>
     <style>
         body {
@@ -30,7 +30,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transform: scaleX(-1); /* Mettre en miroir le flux de la webcam */
+            transform: scaleX(-1); /* Mirror the webcam feed */
         }
         
         #canvas {
@@ -39,7 +39,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            transform: scaleX(-1); /* Refléter la toile pour correspondre à la webcam */
+            transform: scaleX(-1); /* Mirror the canvas to match webcam */
             pointer-events: none;
         }
         
@@ -85,11 +85,10 @@
         <video id="webcam" autoplay playsinline></video>
         <canvas id="canvas"></canvas>
         <div id="three-canvas"></div>
-        <div id="status">Chargement de MediaPipe...</div>
+        <div id="status">Loading MediaPipe...</div>
     </div>
 
-    <p id="links-para"><a href="https://github.com/guarim" target="_blank">Github</a> | <a href="https://guarim.github.io/My-cv/" target="_blank">Mon CV</a> | <a href="https://www.linkedin.com/in/mohamed-guarim-88577699/" target="_blank">LinkedIn</a> </p>
-    
+    <p id="links-para"><a href="https://x.com/measure_plan" target="_blank">Twitter</a> | <a href="https://www.instagram.com/stereo.drift/" target="_blank">Instagram</a> | <a href="https://github.com/collidingScopes/threejs-handtracking-101" target="_blank">Source Code</a> | <a href="https://buymeacoffee.com/stereodrift" target="_blank">❤️</a></p>
 
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
@@ -165,7 +164,7 @@
                     });
                 } catch (error) {
                     statusElement.textContent = `Error accessing webcam: ${error.message}`;
-                    console.error('Pas d'acces à la webcam:', error);
+                    console.error('Error accessing webcam:', error);
                     throw error;
                 }
             }
@@ -315,7 +314,7 @@
                 });
                 
                 await hands.initialize();
-                statusElement.textContent = 'detection des mains!';
+                statusElement.textContent = 'Hand tracking ready!';
                 
                 return hands;
             }
@@ -400,8 +399,8 @@
                 if (results.multiHandLandmarks && results.multiHandLandmarks.length > 0) {
                     // Update status text
                     statusElement.textContent = 
-                        results.multiHandLandmarks.length === 1 ? '1 main detectee' :
-                        `${results.multiHandLandmarks.length} mains detectees`;
+                        results.multiHandLandmarks.length === 1 ? '1 hand detected' :
+                        `${results.multiHandLandmarks.length} hands detected`;
                     
                     // Process each hand
                     for (let handIndex = 0; handIndex < results.multiHandLandmarks.length; handIndex++) {
